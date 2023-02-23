@@ -6,9 +6,9 @@ const app = express();
 const Movie=require('./models/Movie')
 // Set up body parser middleware
 app.use(bodyParser.json());
-
+dbURI=''
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://Tejaswi:test1234@cluster0.dkkurey.mongodb.net/NODEJS_TASK?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Failed to connect to MongoDB', err));
 
